@@ -1,97 +1,86 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# MovieVerse 🎬
 
-# Getting Started
+## 📁 Source Folder Structure
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+```text
+src/
+├── assests/           # Asset files (images, icons, etc.)
+├── components/        # Shared components used across screens
+├── constants/         # App constants, configuration files, and theme colors
+├── hooks/             # Custom React hooks (React Query integrations)
+├── navigation/        # Screen routing and navigation stack setup
+├── screens/           # Main screen UI layouts (Tab screens, Movie Details, etc.)
+├── services/          # Network clients, API query functions, and integrations
+├── store/             # Redux state store setup and slices
+├── types/             # Common TypeScript interfaces and types
+└── utils/             # Helper functions and formatting scripts
+```
 
-## Step 1: Start Metro
+---
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 📝 About the Application
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+MovieVerse is a premium, high-performance React Native mobile application for exploring trending and popular movies, searching titles, and managing personal favorites. 
 
-```sh
-# Using npm
-npm start
+The application features a stunning, state-of-the-art cinematic dark-themed user interface, complete with custom micro-animated navigation and native optimizations. Additionally, it integrates a secure DNS-over-HTTPS (DoH) client to bypass network-level DNS blocks on TMDB resources (popular in certain regions/networks like Jio), ensuring smooth performance under all circumstances.
 
-# OR using Yarn
+### 📸 App Previews
+
+| | | | |
+| :-: | :-: | :-: | :-: |
+| <img src="./src/assests/images/mv1.jpg" width="200" alt="Preview 1" /> | <img src="./src/assests/images/mv2.jpg" width="200" alt="Preview 2" /> | <img src="./src/assests/images/mv3.jpg" width="200" alt="Preview 3" /> | <img src="./src/assests/images/mv4.jpg" width="200" alt="Preview 4" /> |
+
+### ✨ Key Features
+- **Cinematic Dark Design:** A beautiful dark navy/slate theme tailored for media discovery, with gold highlights, smooth elevation overlays, and badge ratings.
+- **Micro-Animated Navigation:** Seamless transition feel using spring-based scale feedback on bottom tab navigation buttons.
+- **Native Custom Adaptive Icons:** Custom high-density Android Adaptive Icons supporting circular/squircle shapes natively with zero white borders.
+- **Native Dark Splash Screen:** Configured system-level launch splash screen in deep navy (`#050F27`) to prevent white screen flashes.
+- **Centralized Data Layer:** Powered by Redux Toolkit for favorites persistence and TanStack Query (v5) for high-performance movie caching, pagination, and search debouncing.
+
+---
+
+## 🛠️ What We Used (Technology Stack)
+
+- **Core Framework:** React Native (0.86.0)
+- **Language:** TypeScript
+- **State Management:** Redux Toolkit & Redux Persist (AsyncStorage)
+- **Data Fetching & Caching:** TanStack React Query (v5) & Axios
+- **Navigation Routing:** React Navigation (v7)
+- **Animations:** React Native Animated API (Spring and Interpolation physics)
+- **Bypass Network Blocks:** Native Android DNS-over-HTTPS resolver via custom `OkHttpClient` factory
+
+---
+
+## 🚀 Getting Started & Installation
+
+### Step 1: Install Node.js
+Ensure you have Node.js installed (version >= 22.11.0 is recommended).
+- **Windows / macOS / Linux**: Download from [Node.js Official Website](https://nodejs.org) or install via [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm).
+
+### Step 2: Install Project Dependencies
+Run the following command in the project root directory to install packages:
+```bash
+yarn install
+```
+
+### Step 3: Start Metro Bundler
+Start the local JavaScript bundler server to package your React Native code:
+```bash
 yarn start
 ```
 
-## Step 2: Build and run your app
+### Step 4: Run the Application on Your Device
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
+#### Android
+Ensure your environment is set up according to the [React Native Environment Setup Guide](https://reactnative.dev/docs/environment-setup) for Android (Android Studio, SDKs, and Emulator/Device configured).
+Run the Android build:
+```bash
 yarn android
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
+#### iOS
+Ensure you are on macOS with Xcode and CocoaPods installed. Install iOS pod dependencies and run the iOS build:
+```bash
+cd ios && pod install && cd ..
 yarn ios
 ```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
